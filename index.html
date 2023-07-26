@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="taskEntry">
+      <h1>Task Manager</h1>
+
+      <!-- Task Creation Form -->
+      <form id="taskForm">
+        <input type="text" id="title" placeholder="Enter your task" required />
+        <textarea id="description" placeholder="Enter task details" required></textarea>
+
+        <label class="date__label" for="dueDate">Due date</label>
+        <input type="date" id="dueDate" required />
+
+        <label class="priority__label">Priority :</label>
+        <label class="priority__list"><input type="radio" name="priority" value="Low" checked /> Low</label>
+        <label class="priority__list"><input type="radio" name="priority" value="Medium" /> Medium</label>
+        <label class="priority__list"><input type="radio" name="priority" value="High" /> High</label>
+
+        <label class="category__label" for="category">Category:</label>
+        <select id="category">
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Shopping">Shopping</option>
+        </select>
+
+        <button id="Add__task__button" type="submit">Add Task</button>
+      </form>
+    </div>
+
+    <!-- Task List Table -->
+    <table id="taskList">
+      <thead class="tasklist__title">
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Due Date</th>
+          <th>Priority</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Task list rows will be added dynamically using JavaScript -->
+      </tbody>
+    </table>
+
+    <!-- Task Detail Modal -->
+    <div id="taskDetailModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Task detail content will be added dynamically using JavaScript -->
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
